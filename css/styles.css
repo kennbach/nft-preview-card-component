@@ -45,9 +45,7 @@ textarea {
 
   --color-primary-softblue: hsl(215, 51%, 70%);
   --color-primary-cyan: hsl(178, 100%, 50%);
-
   --color-image-overlay: hsla(178, 100%, 50%, 0.5);
-
   --color-main-bg: hsl(217, 54%, 11%);
   --color-card-bg: hsl(216, 50%, 16%);
   --color-line-darkblue: hsl(215, 32%, 27%);
@@ -65,14 +63,16 @@ body {
   line-height: 1.3;
   color: var(--color-primary-softblue);
 }
-
 main {
   align-items: center;
   background-color: var(--color-light-gray);
   display: grid;
-  height: 100vh;
+  min-height: 100vh;
   justify-items: center;
   width: 100%;
+}
+a {
+  text-decoration: none;
 }
 
 .card {
@@ -81,7 +81,7 @@ main {
   border-radius: 1.6rem;
   padding: 2.5rem;
   text-align: start;
-  width: var(--width-card);
+  max-width: var(--width-card);
   box-shadow: var(--card-box-shadow);
 }
 
@@ -90,6 +90,13 @@ main {
   border-radius: 1rem;
   display: grid;
   justify-items: center;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.card-image a {
+  line-height: 0;
 }
 
 .card-image img {
@@ -97,14 +104,10 @@ main {
   height: auto;
   position: relative;
   width: 100%;
+  height: auto;
 }
 
 /* begin overlay */
-.card-image {
-  position: relative;
-  width: 100%;
-  height: auto;
-}
 .overlay {
   border-radius: 1rem;
   background-color: var(--color-image-overlay);
@@ -117,6 +120,8 @@ main {
   left: 0;
   right: 0;
   transition: 0.5s ease;
+  padding: 0;
+  margin: 0;
 }
 .overlay img {
   color: white;
@@ -131,6 +136,8 @@ main {
 }
 .card-image:hover .overlay {
   opacity: 1;
+  padding: 0;
+  margin: 0;
 }
 /* end overlay */
 
