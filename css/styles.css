@@ -222,3 +222,13 @@ a {
   color: var(--color-primary-cyan);
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: start;
+    margin-top: 5vw;
+  }
+  .card {
+    margin: 0 5vw;
+  }
+}
